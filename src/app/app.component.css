@@ -1,0 +1,27 @@
+p {
+  font-family: Lato;
+}
+#outputCopy {
+  cursor: copy;
+  color: white;
+  position: relative;
+}
+#outputContent {
+  padding: 5px 10px;
+}
+.copy {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+.copy.copied {
+  display: block;
+}
+
+#outputCopy:hover .copy {
+  display: block;
+}

@@ -1,0 +1,12 @@
+.add-row-btn {
+  /* position: absolute; */
+  top: 0;
+  left: 50%;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.remove-column-btn {
+  top: 0;
+  right: 0;
+}

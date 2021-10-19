@@ -1,0 +1,29 @@
+<ng-container *ngIf="listRow && listRow.length">
+  <div *ngFor="let el of listRow">
+    <div>
+      &lt;div
+      class="row"&gt;
+    </div>
+    <text-renderer [nodeIndex]="nodeIndex+1" [listColumn]="el.listColumn">
+    </text-renderer>
+    <div *ngIf="tab && tab.length">
+      &lt;/div&gt;
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="listColumn && listColumn.length">
+  <div *ngFor="let el of listColumn">
+    <div>
+      &lt;div
+      class="col-sm-12 {{getColumnClassByValue(el.value)}}"&gt;
+    </div>
+    <text-renderer [nodeIndex]="nodeIndex+1" [listRow]="el.listRow">
+    </text-renderer>
+    <span *ngIf="(!el.listRow || !el.listRow.length)"><ng-container  *ngFor="let el of tab">
+      
+      </ng-container> test text</span>
+    <div>
+      &lt;/div&gt;
+    </div>
+  </div>
+</ng-container>

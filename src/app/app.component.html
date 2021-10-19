@@ -1,0 +1,37 @@
+<h1 class="text-center mt-5">Bootstrap 4 Grid Generator</h1>
+<h5 class="text-center mb-5">Generate simple grid template</h5>
+<h5 class="text-center mb-5" *ngIf="isUpgrading">Website is upgrading please try again later</h5>
+<div *ngIf="!isUpgrading" class="mb-5">
+  <div class="px-5 mb-4">
+    <div class="container-fluid">
+      <div class="row my-1" [idx]="i" [value]="el.value" (removeRow)="removeRow($event)" [(listColumn)]="el.listColumn"
+        *ngFor="let el of listRow; let i = index"></div>
+    </div>
+    <button class="btn btn-primary col-12 mt-3" (click)="addRow()">
+    <i class="fas fa-folder-plus"></i> row
+  </button>
+  </div>
+
+  <div class="container mb-2 bg-dark" id="outputCopy">
+    <span class="copy bg-primary text-light" *ngIf="!copied">
+    copy
+  </span>
+    <span class="copy copied bg-primary text-light" *ngIf="copied">
+    copied
+  </span>
+    <div class="mx-2 bg-dark text-cancel" id="outputContent" (click)="copyMessage()" *ngIf="listRow && listRow.length">
+      <!-- <textarea readonly style="width: 100%"> -->
+      <div *ngFor="let el of listRow">
+        &lt;div class="row"&gt;
+        <text-renderer text-renderer [nodeIndex]="1" [listColumn]="el.listColumn">
+        </text-renderer>
+        &lt;/div&gt;
+      </div>
+      <!-- </textarea> -->
+    </div>
+  </div>
+</div>
+
+<div style="position: fixed; bottom: 0; width: 100%; text-align: center; background: black; color: white">
+  @trungsome
+</div>

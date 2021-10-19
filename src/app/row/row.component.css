@@ -1,0 +1,24 @@
+.col-sm-12 {
+  color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: #03a9f4 !important;
+}
+
+.col-sm-12:hover > .add-row-btn {
+  display: block !important;
+}
+
+.btn-add-collumn {
+  position: absolute;
+  right: 0;
+}
+.btn-remove-collumn {
+  position: absolute;
+  left: 0;
+}
+.row-action {
+  position: relative;
+  top: 0;
+  display: none !important;
+}

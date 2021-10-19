@@ -1,0 +1,20 @@
+<div
+  class="col-sm-12"
+  [ngClass]="getColMdName(el.value)"
+  [idx]="i"
+  (resizeColumn)="resizeColumn($event)"
+  (removeColumn)="removeColumn($event)"
+  [(listRow)]="el.listRow"
+  *ngFor="let el of listColumn; let i = index"
+></div>
+<div
+  class="flex-row w-100 row-action ml-auto justify-content-center"
+  style="height: 40px"
+>
+  <button class="btn btn-danger mr-1" (click)="removeThisRow()">
+    <i class="fas fa-folder-minus"></i> row
+  </button>
+  <button class="btn btn-primary" (click)="addColumn()">
+    <i class="far fa-plus-square"></i> col
+  </button>
+</div>
